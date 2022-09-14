@@ -9,6 +9,7 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
+    background-image: url("/images/diagonal-2-light.png");
 }
 
 h1 {
@@ -22,7 +23,9 @@ h1 {
     width: 50%;
     justify-items: center;
     align-items: center;
+    border-radius: 5px;
     border: solid black 3px;
+    box-shadow: 0 0 4px 3px lightgray;
 }
 
 .login_container {
@@ -32,6 +35,7 @@ h1 {
     align-items: center;
     border-right: solid black 3px;
     float: left;
+    background-color: white;
 }
 
 .logo_container {
