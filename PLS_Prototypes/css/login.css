@@ -9,18 +9,13 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-image: url("/images/diagonal-2-light.png");
+    background-image: url("/images/interlaced.png");
 }
 
-h1 {
-    font-size: 35px;
-    word-spacing: 7px;
-    font-weight: bold;
-}
 
 .main_container {
-    height: 60%;
-    width: 50%;
+    height: 650px;
+    width: 1000px;
     justify-items: center;
     align-items: center;
     border-radius: 5px;
@@ -48,14 +43,15 @@ h1 {
 }
 
 
-.container_header {
+.login_container_header {
     height: 20%;
     background: black;
     color: white;
+    padding: 25px 0;
 }
 
-.container_body {
-    height: 63%;
+.login_container_body {
+    height: 65%;
     background: white;
     color: black;
 }
@@ -73,28 +69,35 @@ h1 {
 
 }
 
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+
 .login_form h2{
     font-size: 30px;
 }
 
 .login_form input{
     width: 75%;
+    height: 30px;
+    font-size: 16px;
 }
 
-.container_footer {
+.login_container_footer {
     height: 15%;
     background: black;
     color: white;
+    padding: 20px;
 }
 
 .login_container div {
-    align-items: center;
-    justify-content: center;
     text-align: center;
     width: 100%;
     border: solid white 3px;
     border-radius: 10px;
-    display: inline-block;
 }
 
 .logo_container img {
@@ -115,63 +118,68 @@ h1 {
     text-align: center;
 }
 
+#footer_text {
+    font-size: 16px;
+}
+
 @media screen and (max-width: 1600px) {
     .main_container {
-        height: 75%;
-        width: 65%;
+        height: 585px;
+        width: 900px;
     }
+
+    .login_container_header {
+        padding: 16px 0;
+    }
+
+    #footer_text {
+        font-size: 14px;
+    }
+
 }
 
 @media screen and (max-width: 1200px) {
     .main_container {
-        height: 75%;
-        width: 75%;
+        height: 527px;
+        width: 810px;
     }
 
-    .login_container {
-        width: 45%;
+    .login_container_header {
+        padding: 10px 0;
     }
 
-    .logo_container {
-        width: 55%;
+    .login_container_footer {
+        padding: 15px 5px;
     }
+
+    #footer_text {
+        font-size: 14px;
+    }
+
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .main_container {
         color: white;
         background: teal;
-        height: 80%;
-        width: 70%;
         justify-items: center;
         align-items: center;
+        width: 300px;
+        height: 560px;
     }
 
-    .container_header {
-        color: white;
-        background: teal;
-        height: 20%;
+    .login_container {
         width: 100%;
-        justify-items: center;
-        align-items: center;
+        border-right: none;
     }
 
-    .container_body {
-        color: white;
-        background: teal;
-        height: 60%;
-        width: 100%;
-        justify-items: center;
-        align-items: center;
+    .logo_container {
+        display: none;
     }
 
-    .container_footer {
-        color: white;
-        background: teal;
-        height: 18%;
-        width: 100%;
-        justify-items: center;
-        align-items: center;
+    .login_container_header {
+        padding: 12px 0;
     }
+
 
 }
