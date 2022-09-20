@@ -14,21 +14,21 @@
 <div class="main_container">
     <div class="login_container">
         <div class="login_container_header">
-            <h1>Website<br>Login</h1>
+            <h1>Professional Lawn Services Login</h1>
         </div>
 
         <div class="login_container_body">
             <div id="invalid_login_prompt" class="alert alert-danger" role="alert">
                 The username or password you entered is incorrect.
             </div>
-            <form class="login_form">
+            <form name="login_form" class="login_form" action="js/login.js" onsubmit="return validateForm()" method="post">
                 <h2 id="username_field_heading">Username</h2>
                 <input id="username_field" type="email" class="form-control center-block"
-                       aria-describedby="inputGroupPrepend" placeholder="Enter username" required maxlength="50">
+                       placeholder="Enter username" required maxlength="50">
                 <h2 id="password_field_heading">Password</h2>
                 <input id="password_field" type="password" class="form-control center-block" id="exampleInputPassword1"
                        placeholder="Password" required maxlength="30">
-                <button id="sign_in_button" onclick="signinclick()" class="btn btn-primary" type="submit">Button</button>
+                <button id="sign_in_button" class="btn btn-primary" type="submit">Button</button>
             </form>
         </div>
 

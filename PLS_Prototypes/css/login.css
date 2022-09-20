@@ -46,7 +46,7 @@ body {
     height: 20%;
     background: black;
     color: white;
-    padding: 25px 0;
+    padding: 20px 0;
 }
 
 .login_container_body {
@@ -141,7 +141,11 @@ h1 {
     }
 
     .login_container_header {
-        padding: 16px 0;
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 30px;
     }
 
     #footer_text {
@@ -157,11 +161,15 @@ h1 {
     }
 
     .login_container_header {
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     .login_container_footer {
         padding: 15px 5px;
+    }
+
+    h1 {
+        font-size: 30px;
     }
 
     #footer_text {
@@ -173,7 +181,7 @@ h1 {
     }
 
     #password_field {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
 }
@@ -198,11 +206,15 @@ h1 {
     }
 
     .login_container_header {
-        padding: 12px 0;
+        padding: 15px 0;
     }
 
     .login_form {
         margin-bottom: 30px;
+    }
+
+    #password_field {
+        margin-bottom: 25px;
     }
 
 }

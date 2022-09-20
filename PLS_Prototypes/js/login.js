@@ -1,6 +1,5 @@
-function signinclick() {
+function validateForm() {
 
-    console.log(document.getElementById("username_field").value);
 
     let user = {
         username: document.getElementById("username_field").value,
@@ -10,8 +9,10 @@ function signinclick() {
     if(!(user.username === "admin@admin" && user.password === "password")) {
         $(".login_form").css("margin-top","0")
         $("#invalid_login_prompt").show(200);
+        return false;
     }
     else {
         console.log("valid user");
+        return true;
     }
 }
