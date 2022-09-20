@@ -14,18 +14,20 @@
 <div class="main_container">
     <div class="login_container">
         <div class="login_container_header">
-            <h1>Admin<br>Login</h1>
+            <h1>Website<br>Login</h1>
         </div>
 
         <div class="login_container_body">
-            <div class="login_form">
-                <h2>Username</h2>
-                <input id="username_field" type="text">
-                <h2 id="password_field_heading">Password</h2>
-                <input id="password_field" class="text-center" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div id="invalid_login_prompt" class="alert alert-danger" role="alert">
+                The username or password you entered is incorrect.
             </div>
-
-            <button onclick="signinclick()" id="sign_in_button" type="submit">Sign in</button>
+            <form class="login_form">
+                <h2 id="username_field_heading">Username</h2>
+                <input id="exampleInputEmail1" type="email" class="form-control center-block" aria-describedby="inputGroupPrepend" placeholder="Enter username" required>
+                <h2 id="password_field_heading">Password</h2>
+                <input id="password_field" type="password" class="form-control center-block" id="exampleInputPassword1" placeholder="Password" required>
+                <button id="sign_in_button" onclick="signinclick()" class="btn btn-primary" type="submit"><span id="button_text">Button</span></button>
+            </form>
         </div>
 
         <div class="login_container_footer">

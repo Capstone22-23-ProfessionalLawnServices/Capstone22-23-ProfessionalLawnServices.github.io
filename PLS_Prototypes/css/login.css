@@ -9,9 +9,8 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-image: url("/images/interlaced.png");
+    background-image: url("/images/shattered.webp");
 }
-
 
 .main_container {
     height: 650px;
@@ -52,7 +51,6 @@ body {
 
 .login_container_body {
     height: 65%;
-    background: white;
     color: black;
 }
 
@@ -65,8 +63,6 @@ body {
     align-content: center;
     justify-content: center;
     text-align: center;
-    margin-top: 30px ;
-
 }
 
 h1 {
@@ -109,21 +105,36 @@ h1 {
     padding-top: 10px;
 }
 
+#username_field_heading {
+    margin-top: 80px;
+}
+
+#password_field {
+    margin-bottom: 35px;
+}
+
+#invalid_login_prompt {
+    margin-bottom: 0px;
+    display: none;
+}
+
 #sign_in_button {
-    color: black;
-    border-radius: 5px;
+    color: white;
+    border-radius: 20px;
     height: 35px;
     width: 75%;
     font-size: 25px;
     text-align: center;
+    background-color: #008083;
+    border-color: black;
+    border-width: 2px;
+    padding-bottom: 35px;
+    padding-top: 0px;
 }
+
 
 #footer_text {
     font-size: 16px;
-}
-
-#username_field {
-    outline-color: red;
 }
 
 @media screen and (max-width: 1600px) {
@@ -160,6 +171,14 @@ h1 {
         font-size: 14px;
     }
 
+    #password_field_heading {
+        padding-top: 0px;
+    }
+
+    #password_field {
+        margin-bottom: 30px;
+    }
+
 }
 
 @media screen and (max-width: 850px) {
@@ -183,6 +202,10 @@ h1 {
 
     .login_container_header {
         padding: 12px 0;
+    }
+
+    .login_form {
+        margin-bottom: 30px;
     }
 
 
