@@ -105,17 +105,14 @@ h1 {
     padding-top: 10px;
 }
 
-#username_field_heading {
-    margin-top: 80px;
-}
-
 #password_field {
     margin-bottom: 35px;
 }
 
 #invalid_login_prompt {
     margin-bottom: 0px;
-    display: none;
+    visibility: hidden;
+    height: 0%;
 }
 
 #sign_in_button {
@@ -207,6 +204,5 @@ h1 {
     .login_form {
         margin-bottom: 30px;
     }
-
 
 }
