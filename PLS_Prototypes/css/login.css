@@ -63,6 +63,7 @@ body {
     align-content: center;
     justify-content: center;
     text-align: center;
+    margin-top: 50px;
 }
 
 h1 {
@@ -106,13 +107,12 @@ h1 {
 }
 
 #password_field {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 #invalid_login_prompt {
     margin-bottom: 0px;
-    visibility: hidden;
-    height: 0%;
+    display: none;
 }
 
 #sign_in_button {

@@ -8,7 +8,8 @@ function signinclick() {
     }
 
     if(!(user.username === "admin@admin" && user.password === "password")) {
-        $("invalid_login_prompt").prop("visibility","visible");
+        $(".login_form").css("margin-top","0")
+        $("#invalid_login_prompt").show(200);
     }
     else {
         console.log("valid user");
