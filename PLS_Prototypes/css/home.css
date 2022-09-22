@@ -1,0 +1,70 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-items: center;
+    align-items: center;
+    background-image: url("/images/shattered.webp");
+}
+
+.main_container {
+    height: 100%;
+    width: 100%;
+    margin-top: 80px;
+    display: grid;
+    justify-items: center;
+}
+
+.main_container_body {
+    background-color: white;
+    width: 1400px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.clock_container {
+    width: 20%;
+    height: 30%;
+    background-color: lightcoral;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 80px;
+}
+
+#navbar {
+    background-color: black;
+    width: 90%;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+}
+
+#navbar_container {
+    width: 100%;
+    justify-items: center;
+    display: grid;
+    position: sticky;
+    top: 30px;
+}
+
+#clock_numbers {
+    font-size: 35px;
+    font-family: "Droid Sans";
+}
+
+@media screen and (max-width: 1600px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 850px) {
+
+}
