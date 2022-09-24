@@ -26,6 +26,20 @@ body {
     padding: 20px;
 }
 
+.twoweek_container {
+    height: 60%;
+    width: 100%;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.weekday {
+    height: 48%;
+    width: 14%;
+    background-color: green;
+    float: left;
+}
+
 .clock_container {
     width: 20%;
     height: 30%;
