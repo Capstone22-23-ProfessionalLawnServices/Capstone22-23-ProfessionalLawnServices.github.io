@@ -20,7 +20,7 @@ function setDates() {
     let day_id = "#day_";
 
     for(let i = 0; i < 14; i++) {
-        date.setDate(date.getDate() + i);
+        date.setDate(date.getDate() + 1);
         day_id = day_id.substring(0, day_id.lastIndexOf("_") + 1);
         day_id += i;
         $(day_id).html(date.toDateString());
