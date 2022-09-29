@@ -4,13 +4,16 @@ function timeClock() {
     let date;
 
     if (now.getHours() > 12) {
-        date = (now.getHours() - 12).toString().padStart(2,"0") + ":";
+        date = (now.getHours() - 12).toString().padStart(2,"0") + ":" +
+                now.getMinutes().toString().padStart(2,"0") + ":" +
+                now.getSeconds().toString().padStart(2,"0") + " PM";
     }
     else {
-        date= now.getHours().toString().padStart(2,"0") + ":";
+        date = now.getHours().toString().padStart(2,"0") + ":" +
+                now.getMinutes().toString().padStart(2,"0") + ":" +
+                now.getSeconds().toString().padStart(2,"0") + " AM";
     }
 
-    date += now.getMinutes().toString().padStart(2,"0") + ":" + now.getSeconds().toString().padStart(2,"0");
     $("#clock_numbers").html(date);
 }
 
@@ -25,5 +28,4 @@ function setDates() {
         day_id += i;
         $(day_id).html(date.toDateString());
     }
-
 }
