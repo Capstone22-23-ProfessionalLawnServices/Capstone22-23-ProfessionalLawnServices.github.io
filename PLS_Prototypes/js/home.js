@@ -14,13 +14,39 @@ function timeClock() {
                 now.getSeconds().toString().padStart(2,"0") + " AM";
     }
 
-    $("#clock_numbers").html(date);
+    $("#clock-numbers").html(date);
 }
 
 function setDates() {
 
     let date = new Date();
-    let day_id = "#day_";
+    let day_id = "#day-";
+    let dateColors = getDateColors(date);
+    let currentMonth = date.getMonth();
+
+
+    for(let i = 0; i < 14; i++) {
+        day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1);
+        day_id += i;
+        $(day_id).html(date.toDateString());
+
+        if(currentMonth === date.getMonth()) {
+            $(day_id).css("background-color", dateColors.headerColor);
+            $(day_id).css("color", dateColors.fontColor);
+            $(day_id).parent().parent().css("background-color", dateColors.headerColor);
+        }
+        else {
+            $(day_id).css("background-color", dateColors.headerNextColor);
+            $(day_id).css("color", dateColors.fontNextColor);
+            $(day_id).parent().parent().css("background-color", dateColors.headerNextColor);
+        }
+
+        date.setDate(date.getDate() + 1);
+    }
+}
+
+function getDateColors(date) {
+
     let dateColors = {
         headerColor: "",
         headerNextColor: "",
@@ -44,47 +70,87 @@ function setDates() {
         //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 2) {
+        dateColors.headerColor = "#89e3f3";
+        dateColors.fontColor = "#ffffff";
+        dateColors.headerNextColor = "#ffffff";
+        dateColors.fontNextColor = "#000000";
         //$(day_id).css("background-color", "#89e3f3");
         //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 3) {
-        $(day_id).css("background-color", "#ffffff");
+        dateColors.headerColor = "#ffffff";
+        dateColors.fontColor = "#000000";
+        dateColors.headerNextColor = "#274e13";
+        dateColors.fontNextColor = "#ffffff";
+        //$(day_id).css("background-color", "#ffffff");
     }
     else if(date.getMonth() === 4) {
-        $(day_id).css("background-color", "#274e13");
-        $(day_id).css("color", "#ffffff");
+        dateColors.headerColor = "#274e13";
+        dateColors.fontColor = "#ffffff";
+        dateColors.headerNextColor = "#b4a7d6";
+        dateColors.fontNextColor = "#000000";
+        //$(day_id).css("background-color", "#274e13");
+        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 5) {
-        $(day_id).css("background-color", "#b4a7d6");
+        dateColors.headerColor = "#b4a7d6";
+        dateColors.fontColor = "#000000";
+        dateColors.headerNextColor = "#ff4c4c";
+        dateColors.fontNextColor = "#ffffff";
+        //$(day_id).css("background-color", "#b4a7d6");
 
     }
     else if(date.getMonth() === 6) {
-        $(day_id).css("background-color", "#ff4c4c");
-        $(day_id).css("color", "#ffffff");
+        dateColors.headerColor = "#ff4c4c";
+        dateColors.fontColor = "#ffffff";
+        dateColors.headerNextColor = "#b6d7a8";
+        dateColors.fontNextColor = "#000000";
+
+        //$(day_id).css("background-color", "#ff4c4c");
+        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 7) {
-        $(day_id).css("background-color", "#b6d7a8");
+        dateColors.headerColor = "#b6d7a8";
+        dateColors.fontColor = "#000000";
+        dateColors.headerNextColor = "#0000ff";
+        dateColors.fontNextColor = "#ffffff";
+
+        //$(day_id).css("background-color", "#b6d7a8");
     }
     else if(date.getMonth() === 8) {
-        $(day_id).css("background-color", "#0000ff");
-        $(day_id).css("color", "#ffffff");
+        dateColors.headerColor = "#0000ff";
+        dateColors.fontColor = "#ffffff";
+        dateColors.headerNextColor = "#f198b3";
+        dateColors.fontNextColor = "#000000";
+
+        //$(day_id).css("background-color", "#0000ff");
+        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 9) {
-        $(day_id).css("background-color", "#f198b3");
+        dateColors.headerColor = "#f198b3";
+        dateColors.fontColor = "#000000";
+        dateColors.headerNextColor = "#ffff90";
+        dateColors.fontNextColor = "#000000";
+
+        //$(day_id).css("background-color", "#f198b3");
     }
     else if(date.getMonth() === 10) {
-        $(day_id).css("background-color", "#ffff90");
+        dateColors.headerColor = "#ffff90";
+        dateColors.fontColor = "#000000";
+        dateColors.headerNextColor = "#23395d";
+        dateColors.fontNextColor = "#ffffff";
+
+        //$(day_id).css("background-color", "#ffff90");
     }
     else if(date.getMonth() === 11) {
-        $(day_id).css("background-color", "#23395d");
-        $(day_id).css("color", "#ffffff");
+        dateColors.headerColor = "#23395d";
+        dateColors.fontColor = "#ffffff";
+        dateColors.headerNextColor = "#ba2323";
+        dateColors.fontNextColor = "#000000";
+
+        //$(day_id).css("background-color", "#23395d");
+        //$(day_id).css("color", "#ffffff");
     }
 
-    for(let i = 0; i < 14; i++) {
-        day_id = day_id.substring(0, day_id.lastIndexOf("_") + 1);
-        day_id += i;
-        $(day_id).html(date.toDateString());
-
-        date.setDate(date.getDate() + 1);
-    }
+    return dateColors;
 }

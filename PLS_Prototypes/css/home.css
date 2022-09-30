@@ -11,7 +11,7 @@ body {
     background-image: url("/images/shattered.webp");
 }
 
-.main_container {
+.main-container {
     height: 100%;
     width: 100%;
     margin-top: 80px;
@@ -69,7 +69,7 @@ body {
     top: 30px;
 }
 
-#clock_numbers {
+#clock-numbers {
     font-size: 35px;
     font-family: "Droid Sans";
 }
