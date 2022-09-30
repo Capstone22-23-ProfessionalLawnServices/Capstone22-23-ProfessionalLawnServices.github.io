@@ -12,15 +12,22 @@ body {
 }
 
 .main_container {
-    background-color: white;
     margin-top: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .column {
-    background-color: red;
+    background-color: white;
+    border: 10px red;
     margin: 5px;
     border-radius: 5px;
     height: 90px;
+    padding-top: 5px;
+}
+
+.date_header  {
+    width: 100%;
+    font-size: 17px;
+    border-radius: 5px;
 }
