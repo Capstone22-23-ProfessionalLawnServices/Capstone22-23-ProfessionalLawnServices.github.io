@@ -13,10 +13,8 @@
 </head>
 <body onload="timeClock(); setDates()">
 
-<nav class="navbar navbar-expand-sm bg-primary">
-  <img src="images/Professional Lawn Services Logo.JPG" alt="Professional Lawn Services Logo"
-  height="50px" width="60px">
-  yes
+<nav class="navbar navbar-expand-sm bg-primary text-center">
+  <h1>Professional Lawn Services</h1>
 </nav>
 
 <div class="container main-container center-block">
@@ -25,10 +23,20 @@
 
     <div class="column col-md-3 text-center">
       <div class="inner-clock-column">
-        <div> Clock </div>
-        <time id="clock-numbers"> Time </time>
+        <h2>Clock</h2>
+        <time id="clock-numbers"> Time</time>
+        <label for="people-list">Choose a client:</label>
+        <select name="people" id="people-list">
+          <option value="volvo">Tom</option>
+        </select>
+        <br/>
+        <label for="people-list">Active client:</label>
+        <span>None</span>
+
+      </div>
+      <div class="inner-clock-button-div">
         <button id="start-session-button" class="btn btn-primary" type="submit">Start Session</button>
-        <button id="end-session-button" class="btn btn-primary" type="submit">End Current Session</button>
+        <button id="end-session-button" class="btn btn-primary disabled" type="submit">End Current Session</button>
       </div>
     </div>
 

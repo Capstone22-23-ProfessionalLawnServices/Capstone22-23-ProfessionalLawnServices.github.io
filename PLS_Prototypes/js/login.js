@@ -1,6 +1,5 @@
 function validateForm() {
 
-
     let user = {
         username: document.getElementById("username-field").value,
         password: document.getElementById("password-field").value
