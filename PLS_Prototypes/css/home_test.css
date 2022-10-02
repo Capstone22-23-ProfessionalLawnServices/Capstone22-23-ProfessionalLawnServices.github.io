@@ -25,7 +25,7 @@ body {
     background-color: black;
     margin: 5px 8px 5px 8px;
     border-radius: 5px;
-    height: 200px;
+    height: 225px;
     padding: 2px 2px 2px 2px
 }
 
@@ -40,14 +40,22 @@ body {
     background-color: white;
 }
 
-.inner-clock-column {
+.inner-clock {
     background-color: white;
-    height: 75%;
+    height: 65%;
 }
 
-.inner-clock-button-div {
+.inner-clock-client {
+    padding-top: 15px;
+}
+
+.inner-clock-buttons {
     background-color: white;
-    height: 25%;
+    height: 35%;
+}
+
+.btn {
+    margin: 2px;
 }
 
 h2 {
@@ -56,4 +64,31 @@ h2 {
 
 #clock-numbers {
     font-size: 30px;
+}
+
+#pause-session-button {
+    display: none;
+}
+
+#resume-session-button {
+    display: none;
+}
+
+#end-session-button {
+    display: none;
+}
+
+#active-client {
+    display: none;
+}
+#active-client-label {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+
+    .col-md-2 {
+        display: none;
+    }
+
 }

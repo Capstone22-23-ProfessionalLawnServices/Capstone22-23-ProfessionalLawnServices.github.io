@@ -22,21 +22,23 @@
   <div class="row center-block">
 
     <div class="column col-md-3 text-center">
-      <div class="inner-clock-column">
+      <div class="inner-clock">
         <h2>Clock</h2>
         <time id="clock-numbers"> Time</time>
-        <label for="people-list">Choose a client:</label>
-        <select name="people" id="people-list">
-          <option value="volvo">Tom</option>
-        </select>
-        <br/>
-        <label for="people-list">Active client:</label>
-        <span>None</span>
-
+        <div class="inner-clock-client">
+          <label id="client-list-label" for="client-list">Choose a client:</label>
+          <select name="people" id="client-list">
+            <option value="volvo">Tom</option>
+          </select>
+          <label id="active-client-label" for="active-client">Active client:</label>
+          <span id="active-client">Tom</span>
+        </div>
       </div>
-      <div class="inner-clock-button-div">
-        <button id="start-session-button" class="btn btn-primary" type="submit">Start Session</button>
-        <button id="end-session-button" class="btn btn-primary disabled" type="submit">End Current Session</button>
+      <div class="inner-clock-buttons">
+        <button id="start-session-button" class="btn btn-primary" onclick="startSession()" type="submit">Start Session</button>
+        <button id="pause-session-button" class="btn btn-primary" onclick="pauseSession()" type="submit">Pause Current Session</button>
+        <button id="resume-session-button" class="btn btn-primary" onclick="resumeSession()" type="submit">Resume Current Session</button>
+        <button id="end-session-button" class="btn btn-primary" onclick="endSession()" type="submit">End Current Session</button>
       </div>
     </div>
 
