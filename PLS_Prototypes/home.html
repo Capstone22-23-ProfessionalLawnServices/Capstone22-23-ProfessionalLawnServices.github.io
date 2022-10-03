@@ -1,74 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/home.css">
-    <script src="js/home.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/home.js"></script>
 </head>
 <body onload="timeClock(); setDates()">
 
-<div id="navbar_container">
-  <nav id="navbar">
-    <h1>Navbar</h1>
-  </nav>
-</div>
+<nav class="navbar navbar-expand-sm bg-primary text-center">
+  <h1>Professional Lawn Services</h1>
+</nav>
 
-<div class="main_container">
-  <div class="main_container_body">
-    <div class="twoweek_container">
-        <div id="day_0" class="weekday">
-          0
+<div class="container main-container center-block">
+
+  <div class="row center-block">
+
+    <div class="column col-md-3 text-center">
+      <div class="inner-clock">
+        <h2>Clock</h2>
+        <time id="clock-numbers"> Time</time>
+        <div class="inner-clock-client">
+          <label id="client-list-label" for="client-list">Choose a client:</label>
+          <select name="people" id="client-list">
+            <option value="volvo">Tom</option>
+          </select>
+          <label id="active-client-label" for="active-client">Active client:</label>
+          <span id="active-client">Tom</span>
         </div>
-        <div id="day_1" class="weekday">
-          1
-        </div>
-        <div id="day_2" class="weekday">
-          2
-        </div>
-        <div id="day_3" class="weekday">
-          3
-        </div>
-        <div id="day_4" class="weekday">
-          4
-        </div>
-        <div id="day_5" class="weekday">
-          5
-        </div>
-        <div id="day_6" class="weekday">
-          6
-        </div>
-        <div id="day_7" class="weekday">
-          7
-        </div>
-        <div id="day_8" class="weekday">
-          8
-        </div>
-        <div id="day_9" class="weekday">
-          9
-        </div>
-        <div id="day_10" class="weekday">
-          10
-        </div>
-        <div id="day_11" class="weekday">
-          11
-        </div>
-        <div id="day_12" class="weekday">
-          12
-        </div>
-        <div id="day_13" class="weekday">
-          13
+      </div>
+      <div class="inner-clock-buttons">
+        <button id="start-session-button" class="btn btn-primary" onclick="startSession()" type="submit">Start Session</button>
+        <button id="pause-session-button" class="btn btn-primary" onclick="pauseSession()" type="submit">Pause Current Session</button>
+        <button id="resume-session-button" class="btn btn-primary" onclick="resumeSession()" type="submit">Resume Current Session</button>
+        <button id="end-session-button" class="btn btn-primary" onclick="endSession()" type="submit">End Current Session</button>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-0"class="date-header"> Date 0 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-1" class="date-header"> Date 1 </div>
         </div>
     </div>
-    <div class="clock_container">
-      <time id="clock-numbers">times</time>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-2" class="date-header"> Date 2 </div>
+      </div>
     </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-3" class="date-header"> Date 3 </div>
+      </div>
+    </div>
+
   </div>
+
+  <div class="row center-block">
+
+    <div class="column col-md-3 text-center">
+      col
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-4" class="date-header"> Date 4 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-5" class="date-header"> Date 5 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-6" class="date-header"> Date 6 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-7" class="date-header"> Date 7 </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row center-block">
+
+    <div class="column col-md-3 text-center">
+      col
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-8" class="date-header"> Date 8 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-9" class="date-header"> Date 9 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-10" class="date-header"> Date 10 </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-11" class="date-header"> Date 11 </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 </body>
