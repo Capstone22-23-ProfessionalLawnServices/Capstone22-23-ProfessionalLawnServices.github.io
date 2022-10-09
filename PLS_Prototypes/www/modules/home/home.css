@@ -42,7 +42,7 @@ body {
 
 .inner-clock {
     background-color: white;
-    height: 65%;
+    height: 70%;
 }
 
 .inner-clock-client {
@@ -51,7 +51,7 @@ body {
 
 .inner-clock-buttons {
     background-color: white;
-    height: 35%;
+    height: 30%;
 }
 
 .btn {

@@ -157,32 +157,8 @@ function getDateColors(date) {
 
 function startSession() {
     $("#start-session-button").hide();
-    $("#resume-session-button").hide();
     $("#client-list").hide();
     $("#client-list-label").hide();
-    $("#pause-session-button").show();
-    $("#end-session-button").show();
-    $("#active-client").show();
-    $("#active-client-label").show();
-}
-
-function pauseSession() {
-    $("#pause-session-button").hide();
-    $("#start-session-button").hide();
-    $("#client-list").hide();
-    $("#client-list-label").hide();
-    $("#resume-session-button").show();
-    $("#end-session-button").show();
-    $("#active-client").show();
-    $("#active-client-label").show();
-}
-
-function resumeSession() {
-    $("#resume-session-button").hide();
-    $("#start-session-button").hide();
-    $("#client-list").hide();
-    $("#client-list-label").hide();
-    $("#pause-session-button").show();
     $("#end-session-button").show();
     $("#active-client").show();
     $("#active-client-label").show();
@@ -190,10 +166,8 @@ function resumeSession() {
 
 function endSession() {
     $("#end-session-button").hide();
-    $("#pause-session-button").hide();
     $("#active-client").hide();
     $("#active-client-label").hide();
-    $("#resume-session-button").hide();
     $("#start-session-button").show();
     $("#client-list").show();
     $("#client-list-label").show();

@@ -10,8 +10,9 @@ function validateForm() {
         $("#invalid-login-prompt").show(200);
         return false;
     }
+
     else {
-        console.log("valid user");
+        window.location = "www/modules/home/home.html"
         return true;
     }
 }
