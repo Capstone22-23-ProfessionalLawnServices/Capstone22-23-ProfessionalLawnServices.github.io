@@ -140,7 +140,7 @@ async function setWeather() {
         units: "imperial"
     }
 
-    //For api call information: https://openweathermap.org/forecast5
+    //For api information: https://openweathermap.org/forecast5
 
     let url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + params.lat + "&lon=" +
         params.long + "&cnt=" + params.cnt + "&appid=" + params.apiKey + "&units=" + params.units;
@@ -166,6 +166,10 @@ async function setWeather() {
             $(day_id).html(timeIntervals.main.temp_max + "|" + timeIntervals.main.temp_min);
             prevDt = intervalDate;
             weekday++;
+        }
+
+        if(weekday === 4) {
+            $("#weather-module-day-5").delete();
         }
     }
 }

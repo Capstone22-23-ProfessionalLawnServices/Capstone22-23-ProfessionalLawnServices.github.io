@@ -43,14 +43,15 @@ body {
 .date-content {
     margin: 8px 8px 8px 8px;
     height: 180px;
-    background-color: red;
-
+    padding-top: 5px;
 }
 
-.weather-content {
+.content-module {
     height: 30px;
     background-color: navajowhite;
     border-radius: 8px;
+    margin-bottom: 5px;
+    font-size: 20px;
 }
 
 .inner-clock {
