@@ -23,7 +23,7 @@
             <div id="invalid-login-prompt" class="alert alert-danger" role="alert">
                 The username or password you entered is incorrect.
             </div>
-            <form name="login-form" class="login-form" action="index.js" onsubmit="return validateForm()" method="post">
+            <form name="login-form" class="login-form" action="index.js" onsubmit="return validateForm(event)" method="get">
                 <h2 id="username_field_heading">Username</h2>
                 <input id="username-field" type="email" class="form-control center-block"
                        placeholder="Enter username" required maxlength="50">

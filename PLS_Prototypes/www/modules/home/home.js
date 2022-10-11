@@ -26,8 +26,7 @@ function setDates() {
 
 
     for(let i = 0; i < 14; i++) {
-        day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1);
-        day_id += i;
+        day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + i;
         $(day_id).html(date.toDateString());
 
         if(currentMonth === date.getMonth()) {
@@ -59,100 +58,116 @@ function getDateColors(date) {
         dateColors.fontColor = "#000000";
         dateColors.headerNextColor = "#6a329f";
         dateColors.fontNextColor = "#ffffff";
-        //$(day_id).css("background-color", "#ba2323");
     }
     else if(date.getMonth() === 1) {
         dateColors.headerColor = "#6a329f";
         dateColors.fontColor = "#ffffff";
         dateColors.headerNextColor = "#89e3f3";
         dateColors.fontNextColor = "#ffffff";
-        //$(day_id).css("background-color", "#6a329f");
-        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 2) {
         dateColors.headerColor = "#89e3f3";
         dateColors.fontColor = "#ffffff";
         dateColors.headerNextColor = "#ffffff";
         dateColors.fontNextColor = "#000000";
-        //$(day_id).css("background-color", "#89e3f3");
-        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 3) {
         dateColors.headerColor = "#ffffff";
         dateColors.fontColor = "#000000";
         dateColors.headerNextColor = "#274e13";
         dateColors.fontNextColor = "#ffffff";
-        //$(day_id).css("background-color", "#ffffff");
     }
     else if(date.getMonth() === 4) {
         dateColors.headerColor = "#274e13";
         dateColors.fontColor = "#ffffff";
         dateColors.headerNextColor = "#b4a7d6";
         dateColors.fontNextColor = "#000000";
-        //$(day_id).css("background-color", "#274e13");
-        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 5) {
         dateColors.headerColor = "#b4a7d6";
         dateColors.fontColor = "#000000";
         dateColors.headerNextColor = "#ff4c4c";
         dateColors.fontNextColor = "#ffffff";
-        //$(day_id).css("background-color", "#b4a7d6");
-
     }
     else if(date.getMonth() === 6) {
         dateColors.headerColor = "#ff4c4c";
         dateColors.fontColor = "#ffffff";
         dateColors.headerNextColor = "#b6d7a8";
         dateColors.fontNextColor = "#000000";
-
-        //$(day_id).css("background-color", "#ff4c4c");
-        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 7) {
         dateColors.headerColor = "#b6d7a8";
         dateColors.fontColor = "#000000";
         dateColors.headerNextColor = "#0000ff";
         dateColors.fontNextColor = "#ffffff";
-
-        //$(day_id).css("background-color", "#b6d7a8");
     }
     else if(date.getMonth() === 8) {
         dateColors.headerColor = "#0000ff";
         dateColors.fontColor = "#ffffff";
         dateColors.headerNextColor = "#f198b3";
         dateColors.fontNextColor = "#000000";
-
-        //$(day_id).css("background-color", "#0000ff");
-        //$(day_id).css("color", "#ffffff");
     }
     else if(date.getMonth() === 9) {
         dateColors.headerColor = "#f198b3";
         dateColors.fontColor = "#000000";
         dateColors.headerNextColor = "#ffff90";
         dateColors.fontNextColor = "#000000";
-
-        //$(day_id).css("background-color", "#f198b3");
     }
     else if(date.getMonth() === 10) {
         dateColors.headerColor = "#ffff90";
         dateColors.fontColor = "#000000";
         dateColors.headerNextColor = "#23395d";
         dateColors.fontNextColor = "#ffffff";
-
-        //$(day_id).css("background-color", "#ffff90");
     }
     else if(date.getMonth() === 11) {
         dateColors.headerColor = "#23395d";
         dateColors.fontColor = "#ffffff";
         dateColors.headerNextColor = "#ba2323";
         dateColors.fontNextColor = "#000000";
-
-        //$(day_id).css("background-color", "#23395d");
-        //$(day_id).css("color", "#ffffff");
     }
 
     return dateColors;
+}
+
+async function setWeather() {
+
+    let day_id = "#weather-module-day-";
+    let params = {
+        lat: "34.19",
+        long: "-79.76",
+        cnt: "40",
+        apiKey: "2d1648148731c573db608d8fd90ba660",
+        units: "imperial"
+    }
+
+    //For api call information: https://openweathermap.org/forecast5
+
+    let url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + params.lat + "&lon=" +
+        params.long + "&cnt=" + params.cnt + "&appid=" + params.apiKey + "&units=" + params.units;
+
+
+    let responseJson = await fetch(url, {
+        method: 'GET'
+    })
+        .then(response => response.json())
+        .then(json => {
+            return json;
+        })
+
+    let prevDt = -1;
+    let weekday = 0;
+
+    for(let timeIntervals of responseJson.list) {
+        let intervalDate = new Date (timeIntervals.dt * 1000).getDate();
+
+        if(prevDt != intervalDate) {
+            console.log(timeIntervals.main.temp_min)
+            day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + weekday;
+            $(day_id).html(timeIntervals.main.temp_max + "|" + timeIntervals.main.temp_min);
+            prevDt = intervalDate;
+            weekday++;
+        }
+    }
 }
 
 function startSession() {

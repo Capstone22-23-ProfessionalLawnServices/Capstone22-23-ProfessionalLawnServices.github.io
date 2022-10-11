@@ -29,15 +29,28 @@ body {
     padding: 2px 2px 2px 2px
 }
 
+.inner-date-column {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
 .date-header  {
     width: 100%;
     font-size: 17px;
 }
 
-.inner-date-column {
-    width: 100%;
-    height: 100%;
-    background-color: white;
+.date-content {
+    margin: 8px 8px 8px 8px;
+    height: 180px;
+    background-color: red;
+
+}
+
+.weather-content {
+    height: 30px;
+    background-color: navajowhite;
+    border-radius: 8px;
 }
 
 .inner-clock {
