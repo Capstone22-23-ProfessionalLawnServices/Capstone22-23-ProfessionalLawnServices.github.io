@@ -1,3 +1,5 @@
+
+
 function timeClock() {
     setTimeout("timeClock()", 1000);
     let now = new Date();
@@ -143,8 +145,8 @@ async function setWeather() {
     //For api information: https://openweathermap.org/forecast5
 
     let url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + params.lat + "&lon=" +
-        params.long + "&cnt=" + params.cnt + "&appid=" + params.apiKey + "&units=" + params.units;
-
+        params.long + "&cnt=" + params.cnt + "&appid=" + "" +
+        "&units=" + params.units;
 
     let responseJson = await fetch(url, {
         method: 'GET'
@@ -157,20 +159,26 @@ async function setWeather() {
     let prevDt = -1;
     let weekday = 0;
 
-    for(let timeIntervals of responseJson.list) {
-        let intervalDate = new Date (timeIntervals.dt * 1000).getDate();
+    for(let timeInterval of responseJson.list) {
+        let intervalDate = new Date (timeInterval.dt * 1000).getDate();
 
         if(prevDt != intervalDate) {
-            console.log(timeIntervals.main.temp_min)
+            console.log(timeInterval.main.temp_min)
+            console.log(timeInterval.main.temp_max)
+            console.log(timeInterval)
             day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + weekday;
-            $(day_id).html(timeIntervals.main.temp_max + "|" + timeIntervals.main.temp_min);
+
+            if(timeInterval.main.temp_max === timeInterval.main.temp_min) {
+                $(day_id).html(timeInterval.main.temp);
+            }
+            else {
+                $(day_id).html(timeInterval.main.temp_max + "|" + timeInterval.main.temp_min);
+            }
+
             prevDt = intervalDate;
-            weekday++;
+            weekday += 1;
         }
 
-        if(weekday === 4) {
-            $("#weather-module-day-5").delete();
-        }
     }
 }
 
