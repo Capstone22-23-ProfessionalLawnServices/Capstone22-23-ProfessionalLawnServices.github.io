@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="icon" type="image/x-icon" href="../../../images/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js"></script>
+</head>
+<body onload="timeClock(); setDates();">
+
+<nav class="navbar navbar-expand-sm bg-primary text-center">
+  <h1>Professional Lawn Services</h1>
+</nav>
+
+<div class="container main-container center-block">
+
+  <div class="row center-block">
+
+    <div class="column col-md-3 text-center">
+      <div class="inner-clock">
+        <h2>Clock</h2>
+        <time id="clock-numbers"> Time</time>
+        <div class="inner-clock-client">
+          <label id="client-list-label" for="client-list">Choose a client:</label>
+          <select name="people" id="client-list">
+            <option value="volvo">Tom</option>
+          </select>
+          <label id="active-client-label" for="active-client">Active client:</label>
+          <span id="active-client">Tom</span>
+        </div>
+      </div>
+      <div class="inner-clock-buttons">
+        <button id="start-session-button" class="btn btn-primary" onclick="startSession()" type="submit">Start Session</button>
+        <button id="end-session-button" class="btn btn-primary" onclick="endSession()" type="submit">End Current Session</button>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-0"class="date-header"> Date 0 </div>
+        <div id="day-0-content"class="date-content">
+          <div id="weather-module-day-0" class="content-module">Weather 0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-1" class="date-header"> Date 1 </div>
+        <div id="day-1-content"class="date-content">
+          <div id="weather-module-day-1" class="content-module">Weather 1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-2" class="date-header"> Date 2 </div>
+        <div id="day-2-content"class="date-content">
+          <div id="weather-module-day-2" class="content-module">Weather 2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-3" class="date-header"> Date 3 </div>
+        <div id="day-3-content"class="date-content">
+          <div id="weather-module-day-3" class="content-module">Weather 3</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row center-block">
+
+    <div class="column col-md-3 text-center">
+      col
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-4" class="date-header"> Date 4 </div>
+        <div id="day-4-content"class="date-content">
+          <div id="weather-module-day-4" class="content-module">Weather 4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-5" class="date-header"> Date 5 </div>
+        <div id="day-5-content"class="date-content">
+          <div id="weather-module-day-5" class="content-module">Weather 5</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-6" class="date-header"> Date 6 </div>
+        <div id="day-6-content"class="date-content">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-7" class="date-header"> Date 7 </div>
+        <div id="day-7-content"class="date-content">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row center-block">
+
+    <div class="column col-md-3 text-center">
+      col
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-8" class="date-header"> Date 8 </div>
+        <div id="day-8-content"class="date-content">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-9" class="date-header"> Date 9 </div>
+        <div id="day-9-content"class="date-content">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-10" class="date-header"> Date 10 </div>
+        <div id="day-10-content"class="date-content">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column col-md-2 text-center">
+      <div class="inner-date-column">
+        <div id="day-11" class="date-header"> Date 11 </div>
+        <div id="day-11-content"class="date-content">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
