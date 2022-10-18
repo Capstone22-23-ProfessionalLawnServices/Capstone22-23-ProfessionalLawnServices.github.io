@@ -1,5 +1,3 @@
-
-
 function timeClock() {
     setTimeout("timeClock()", 1000);
     let now = new Date();
@@ -142,13 +140,20 @@ async function setWeather() {
         units: "imperial"
     }
 
+    //Loads the connection credentials from the git.ignored json file "connections.json"
+
+    let responseJsonConnections = await fetch("../../../connections.json")
+        .then(response => response.json())
+        .then(json => {
+            return json;
+        })
+
     //For api information: https://openweathermap.org/forecast5
 
-    let url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + params.lat + "&lon=" +
-        params.long + "&cnt=" + params.cnt + "&appid=" + "" +
-        "&units=" + params.units;
+    let urlWeather = responseJsonConnections.production.OWAPIWeatherURL + "lat=" + params.lat + "&lon=" +
+        params.long + "&units=" + params.units + "&appid=" + responseJsonConnections.production.OWAPIKey;
 
-    let responseJson = await fetch(url, {
+    let responseJsonWeather = await fetch(urlWeather, {
         method: 'GET'
     })
         .then(response => response.json())
@@ -156,30 +161,65 @@ async function setWeather() {
             return json;
         })
 
-    let prevDt = -1;
-    let weekday = 0;
+    $(day_id + "0").html(Math.round(Number(responseJsonWeather.main.temp_max)) + "|" +
+        Math.round(Number(responseJsonWeather.main.temp_min)));
 
-    for(let timeInterval of responseJson.list) {
+    let urlForecast = responseJsonConnections.production.OWAPIForecastURL + "lat=" + params.lat + "&lon=" +
+        params.long + "&cnt=" + params.cnt + "&units=" + params.units +
+        "&appid=" + responseJsonConnections.production.OWAPIKey;
+
+    let responseJsonForecast = await fetch(urlForecast, {
+        method: 'GET'
+    })
+        .then(response => response.json())
+        .then(json => {
+            return json;
+        })
+
+    let prevDt = new Date().getDate() + 1;
+    let weekday = 1;
+    let tempMin = "200";
+    let tempMax = "-100";
+
+    for(let timeInterval of responseJsonForecast.list) {
         let intervalDate = new Date (timeInterval.dt * 1000).getDate();
 
-        if(prevDt != intervalDate) {
-            console.log(timeInterval.main.temp_min)
-            console.log(timeInterval.main.temp_max)
-            console.log(timeInterval)
+        if(intervalDate === new Date().getDate()) {
+            continue;
+        }
+
+        if(prevDt !== intervalDate) {
             day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + weekday;
 
-            if(timeInterval.main.temp_max === timeInterval.main.temp_min) {
+            if(new Date().getDate() === intervalDate){
+                $(day_id).html(timeInterval.main.temp_max + "|" + timeInterval.main.temp_min);
+            }
+            else if(tempMax === tempMin) {
                 $(day_id).html(timeInterval.main.temp);
             }
             else {
-                $(day_id).html(timeInterval.main.temp_max + "|" + timeInterval.main.temp_min);
+                $(day_id).html(Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
             }
 
             prevDt = intervalDate;
             weekday += 1;
+            tempMin = "200";
+            tempMax = "-100";
+        }
+
+        if(Number(timeInterval.main.temp_max) > Number(tempMax)) {
+            tempMax = timeInterval.main.temp_max;
+        }
+
+        if(Number(timeInterval.main.temp_min) < Number(tempMin)) {
+            tempMin = timeInterval.main.temp_min;
         }
 
     }
+
+    day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + 5;
+    $(day_id).html(Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
+
 }
 
 function startSession() {
