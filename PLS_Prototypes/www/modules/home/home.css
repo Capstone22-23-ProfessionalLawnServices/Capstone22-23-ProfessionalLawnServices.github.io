@@ -13,12 +13,21 @@ body {
 
 .navbar {
     background-color: #6D98AB;
+    display: inline;
+    padding-top: 6px;
 }
 
 .main-container {
     margin-top: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.primary-column-header {
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
 }
 
 .column {
@@ -48,7 +57,7 @@ body {
 
 .content-module {
     height: 30px;
-    background-color: navajowhite;
+    background-color: #E9EDF0;
     border-radius: 8px;
     margin-bottom: 5px;
     font-size: 18px;
@@ -72,8 +81,23 @@ body {
     margin: 2px;
 }
 
+nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+}
+
 h2 {
     margin-top: 0;
+}
+
+#navbar-title {
+    font-size: 30px;
 }
 
 #clock-numbers {

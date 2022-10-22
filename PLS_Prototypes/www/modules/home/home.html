@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="home.css">
   <script src="home.js"></script>
 </head>
-<body onload="timeClock(); setDates(); setWeather()">
+<body onload="timeClock(); setDates();">
 
 <nav class="navbar navbar-expand-sm bg-primary text-center">
-  <h1>Professional Lawn Services</h1>
+  <span id="navbar-title">Professional Lawn Services</span>
+  <input type="text">
 </nav>
 
 <div class="container main-container center-block">
@@ -23,7 +24,7 @@
 
     <div class="column col-md-3 text-center">
       <div class="inner-clock">
-        <h2>Clock</h2>
+        <div class="primary-column-header">Clock</div>
         <time id="clock-numbers"> Time</time>
         <div class="inner-clock-client">
           <label id="client-list-label" for="client-list">Choose a client:</label>
