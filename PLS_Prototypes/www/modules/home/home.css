@@ -12,9 +12,17 @@ body {
 }
 
 .navbar {
+    position: fixed !important;
     background-color: #6D98AB;
-    display: inline;
-    padding-top: 6px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 100;
+     justify-content: space-between;
+    align-items: center;
+    display: flex;
 }
 
 .main-container {
@@ -81,23 +89,36 @@ body {
     margin: 2px;
 }
 
-nav {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    width: 100%;
-    z-index: 100;
-    text-align: center;
+.nav-links li {
+    list-style: none;
+    float:left;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding-left: 20px;
 }
 
 h2 {
     margin-top: 0;
 }
 
+#navbar-logo {
+    color: pink;
+    background-color: white;
+    border-radius: 10px;
+}
+
 #navbar-title {
-    font-size: 30px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+#navbar-collapse {
+    width: 300px;
 }
 
 #clock-numbers {
