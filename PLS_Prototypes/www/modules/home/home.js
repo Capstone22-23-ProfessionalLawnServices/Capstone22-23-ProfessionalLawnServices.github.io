@@ -135,8 +135,6 @@ async function setWeather() {
     let params = {
         lat: "34.19",
         long: "-79.76",
-        cnt: "40",
-        apiKey: "2d1648148731c573db608d8fd90ba660",
         units: "imperial"
     }
 
