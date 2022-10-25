@@ -161,6 +161,20 @@ async function setWeather() {
 
     $(day_id + "0").html(Math.round(Number(responseJsonWeather.main.temp_max)) + "|" +
         Math.round(Number(responseJsonWeather.main.temp_min)));
+    let day_0_String = $(day_id + "0-info").html();
+
+    let day_0_String1 = day_0_String.substring(day_0_String, day_0_String.indexOf(":") + 1);
+    day_0_String = day_0_String.substring(day_0_String.indexOf(":") + 1)
+    let day_0_String2 = day_0_String.substring(0, day_0_String.indexOf(":") + 1);
+    day_0_String = day_0_String.substring(day_0_String.indexOf(":") + 1)
+
+    day_0_String1 += " " + responseJsonWeather.main.humidity;
+    day_0_String2 += " " + responseJsonWeather.weather[0].description;
+
+    day_0_String = day_0_String1 + day_0_String2 + day_0_String;
+
+
+    $(day_id + "0-info").html(day_0_String);
 
     let urlForecast = responseJsonConnections.production.OWAPIForecastURL + "lat=" + params.lat + "&lon=" +
         params.long + "&units=" + params.units + "&appid=" + responseJsonConnections.production.OWAPIKey;
@@ -177,6 +191,8 @@ async function setWeather() {
     let weekday = 1;
     let tempMin = "200";
     let tempMax = "-100";
+
+    //Sets the max, min, and info for weather modules 1-5
 
     for(let timeInterval of responseJsonForecast.list) {
         let intervalDate = new Date (timeInterval.dt * 1000).getDate();
