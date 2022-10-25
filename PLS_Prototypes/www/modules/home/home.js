@@ -220,6 +220,14 @@ async function setWeather() {
 
 }
 
+function moduleInfo(button_id) {
+    console.log(button_id)
+    console.log("weather-module-day-0")
+    $(button_id).hide();
+    $(button_id + "-info").html().children().show();
+
+}
+
 function startSession() {
     $("#start-session-button").hide();
     $("#client-list").hide();
