@@ -163,8 +163,7 @@ async function setWeather() {
         Math.round(Number(responseJsonWeather.main.temp_min)));
 
     let urlForecast = responseJsonConnections.production.OWAPIForecastURL + "lat=" + params.lat + "&lon=" +
-        params.long + "&cnt=" + params.cnt + "&units=" + params.units +
-        "&appid=" + responseJsonConnections.production.OWAPIKey;
+        params.long + "&units=" + params.units + "&appid=" + responseJsonConnections.production.OWAPIKey;
 
     let responseJsonForecast = await fetch(urlForecast, {
         method: 'GET'
@@ -221,11 +220,22 @@ async function setWeather() {
 }
 
 function moduleInfo(button_id) {
-    console.log(button_id)
-    console.log("weather-module-day-0")
-    $(button_id).hide();
-    $(button_id + "-info").html().children().show();
 
+    button_id = "#" + button_id;
+    let button_info_id = button_id + "-info";
+
+    if($(button_info_id).css("display") === "none") {
+        $(button_id).css("border-radius", "8px 8px 0 0")
+        $(button_id).css("margin-bottom", "0")
+        $(button_id).css("background", "rgba(109, 152, 171, 45%)")
+        $(button_info_id).show();
+    }
+    else {
+        $(button_id).css("border-radius", "8px")
+        $(button_id).css("margin-bottom", "5px")
+        $(button_id).css("background", "#E9EDF0")
+        $(button_info_id).hide();
+    }
 }
 
 function startSession() {

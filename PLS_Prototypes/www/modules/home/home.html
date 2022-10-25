@@ -38,6 +38,7 @@
         <div class="inner-clock-client">
           <label id="client-list-label" for="client-list">Choose a client:</label>
           <select name="people" id="client-list">
+            <!-- Tom is a hardcoded example -->
             <option value="volvo">Tom</option>
           </select>
           <label id="active-client-label" for="active-client">Active client:</label>
@@ -61,6 +62,8 @@
               <li><span>Description: </span></li>
             </ul>
           </div>
+          <!-- Tom is a hardcoded example -->
+          <button class="content-module">Tom</button>
         </div>
       </div>
     </div>
@@ -69,7 +72,7 @@
       <div class="inner-date-column">
         <div id="day-1" class="date-header"> Date 1 </div>
         <div id="day-1-content" class="date-content">
-          <button id="weather-module-day-1" class="content-module">Weather 1</button>
+          <button id="weather-module-day-1" class="content-module" onclick="moduleInfo(this.id)">Weather 1</button>
           <div id="weather-module-day-1-info" class="module-info">
             <ul>
               <li><span>Humidity: </span></li>
@@ -84,7 +87,7 @@
       <div class="inner-date-column">
         <div id="day-2" class="date-header"> Date 2 </div>
         <div id="day-2-content" class="date-content">
-          <button id="weather-module-day-2" class="content-module">Weather 2</button>
+          <button id="weather-module-day-2" class="content-module" onclick="moduleInfo(this.id)">Weather 2</button>
           <div id="weather-module-day-2-info" class="module-info">
             <ul>
               <li><span>Humidity: </span></li>
@@ -99,7 +102,7 @@
       <div class="inner-date-column">
         <div id="day-3" class="date-header"> Date 3 </div>
         <div id="day-3-content" class="date-content">
-          <button id="weather-module-day-3" class="content-module">Weather 3</button>
+          <button id="weather-module-day-3" class="content-module" onclick="moduleInfo(this.id)">Weather 3</button>
           <div id="weather-module-day-3-info" class="module-info">
             <ul>
               <li><span>Humidity: </span></li>
@@ -137,7 +140,7 @@
       <div class="inner-date-column">
         <div id="day-5" class="date-header"> Date 5 </div>
         <div id="day-5-content" class="date-content">
-          <button id="weather-module-day-5" class="content-module">Weather 5</button>
+          <button id="weather-module-day-5" class="content-module" onclick="moduleInfo(this.id)">Weather 5</button>
           <div id="weather-module-day-5-info" class="module-info">
             <ul>
               <li><span>Humidity: </span></li>
