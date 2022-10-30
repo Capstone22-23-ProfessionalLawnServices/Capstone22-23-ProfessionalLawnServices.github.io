@@ -112,20 +112,14 @@ async function setWeather() {
 
     $(day_id + "0").html(Math.round(Number(responseJsonWeather.main.temp_max)) + "|" +
         Math.round(Number(responseJsonWeather.main.temp_min)));
-    let day_0_String = $(day_id + "0-info").html();
+    let weather_info_html = "              <ul>\n" +
+        "                <li><span>Humidity: " + responseJsonWeather.main.humidity + "</span></li>\n" +
+        "                <li><span>Description: " + responseJsonWeather.weather[0].description + " </span></li>\n" +
+        "              </ul>\n";
 
-    let day_0_String1 = day_0_String.substring(day_0_String, day_0_String.indexOf(":") + 1);
-    day_0_String = day_0_String.substring(day_0_String.indexOf(":") + 1)
-    let day_0_String2 = day_0_String.substring(0, day_0_String.indexOf(":") + 1);
-    day_0_String = day_0_String.substring(day_0_String.indexOf(":") + 1)
+    console.log(weather_info_html);
 
-    day_0_String1 += " " + responseJsonWeather.main.humidity;
-    day_0_String2 += " " + responseJsonWeather.weather[0].description;
-
-    day_0_String = day_0_String1 + day_0_String2 + day_0_String;
-
-
-    $(day_id + "0-info").html(day_0_String);
+    $(day_id + "0-info").html(weather_info_html);
 
     let urlForecast = responseJsonConnections.production.OWAPIForecastURL + "lat=" + params.lat + "&lon=" +
         params.long + "&units=" + params.units + "&appid=" + responseJsonConnections.production.OWAPIKey;
@@ -142,6 +136,8 @@ async function setWeather() {
     let weekday = 1;
     let tempMin = "200";
     let tempMax = "-100";
+    let tempHumidity = "";
+    let tempDescription = "";
 
     //Sets the max, min, and info for weather modules 1-5
 
@@ -165,6 +161,16 @@ async function setWeather() {
                 $(day_id).html(Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
             }
 
+            console.log(timeInterval.main.humidity);
+            console.log(timeInterval.weather[0].description);
+
+            weather_info_html = "              <ul>\n" +
+                "                <li><span>Humidity: " + tempHumidity + "</span></li>\n" +
+                "                <li><span>Description: " + tempDescription + " </span></li>\n" +
+                "              </ul>\n";
+
+            $(day_id + "-info").html(weather_info_html);
+
             prevDt = intervalDate;
             weekday += 1;
             tempMin = "200";
@@ -179,10 +185,20 @@ async function setWeather() {
             tempMin = timeInterval.main.temp_min;
         }
 
+        tempHumidity = timeInterval.main.humidity;
+        tempDescription = timeInterval.weather[0].description;
+
     }
 
     day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + 5;
     $(day_id).html(Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
+
+    weather_info_html = "              <ul>\n" +
+        "                <li><span>Humidity: " + tempHumidity + "</span></li>\n" +
+        "                <li><span>Description: " + tempDescription + " </span></li>\n" +
+        "              </ul>\n";
+
+    $(day_id + "-info").html(weather_info_html);
 
 }
 
