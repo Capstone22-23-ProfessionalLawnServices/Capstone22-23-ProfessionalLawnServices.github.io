@@ -21,23 +21,28 @@ function setDates() {
 
     let date = new Date();
     let day_id = "#day-";
+    let day_id_content = "#day--content";
     let dateColors = getDateColors(date);
     let currentMonth = date.getMonth();
 
 
     for(let i = 0; i < 14; i++) {
-        day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + i;
+        day_id = day_id.substring(0, (day_id.lastIndexOf("-") + 1)) + i;
+        day_id_content = day_id_content.substring(0, day_id_content.indexOf("-") + 1) + i +
+            day_id_content.substring(day_id_content.lastIndexOf("-"));
         $(day_id).html(date.toDateString());
 
         if(currentMonth === date.getMonth()) {
             $(day_id).css("background-color", dateColors.headerColor);
             $(day_id).css("color", dateColors.fontColor);
             $(day_id).parent().parent().css("background-color", dateColors.headerColor);
+            $(day_id_content).children().css("background-color", dateColors.contentRgb);
         }
         else {
             $(day_id).css("background-color", dateColors.headerNextColor);
             $(day_id).css("color", dateColors.fontNextColor);
             $(day_id).parent().parent().css("background-color", dateColors.headerNextColor);
+            $(day_id_content).children().css("background-color", dateColors.contentNextRgb);
         }
 
         date.setDate(date.getDate() + 1);
@@ -49,81 +54,27 @@ function getDateColors(date) {
     let dateColors = {
         headerColor: "",
         headerNextColor: "",
+        contentRgb: "",
         fontColor: "",
-        fontNextColor: ""
+        fontNextColor: "",
+        contentNextRgb: ""
     };
 
-    if(date.getMonth() === 0) {
-        dateColors.headerColor = "#ba2323";
+    if((date.getMonth() % 2) === 0) {
+        dateColors.headerColor = "rgb(235, 170, 61)";
         dateColors.fontColor = "#000000";
-        dateColors.headerNextColor = "#6a329f";
-        dateColors.fontNextColor = "#ffffff";
-    }
-    else if(date.getMonth() === 1) {
-        dateColors.headerColor = "#6a329f";
-        dateColors.fontColor = "#ffffff";
-        dateColors.headerNextColor = "#89e3f3";
-        dateColors.fontNextColor = "#ffffff";
-    }
-    else if(date.getMonth() === 2) {
-        dateColors.headerColor = "#89e3f3";
-        dateColors.fontColor = "#ffffff";
-        dateColors.headerNextColor = "#ffffff";
+        dateColors.contentRgb = "rgb(235, 170, 61, 65%)";
+        dateColors.headerNextColor = "rgb(109, 152, 171)";
         dateColors.fontNextColor = "#000000";
+        dateColors.contentNextRgb = "rgb(109, 152, 171, 60%)";
     }
-    else if(date.getMonth() === 3) {
-        dateColors.headerColor = "#ffffff";
+    else if((date.getMonth() % 2) === 1) {
+        dateColors.headerColor = "rgb(109, 152, 171)";
         dateColors.fontColor = "#000000";
-        dateColors.headerNextColor = "#274e13";
-        dateColors.fontNextColor = "#ffffff";
-    }
-    else if(date.getMonth() === 4) {
-        dateColors.headerColor = "#274e13";
-        dateColors.fontColor = "#ffffff";
-        dateColors.headerNextColor = "#b4a7d6";
+        dateColors.contentRgb = "rgb(109, 152, 171, 60%)";
+        dateColors.headerNextColor = "rgb(235, 170, 61)";
         dateColors.fontNextColor = "#000000";
-    }
-    else if(date.getMonth() === 5) {
-        dateColors.headerColor = "#b4a7d6";
-        dateColors.fontColor = "#000000";
-        dateColors.headerNextColor = "#ff4c4c";
-        dateColors.fontNextColor = "#ffffff";
-    }
-    else if(date.getMonth() === 6) {
-        dateColors.headerColor = "#ff4c4c";
-        dateColors.fontColor = "#ffffff";
-        dateColors.headerNextColor = "#b6d7a8";
-        dateColors.fontNextColor = "#000000";
-    }
-    else if(date.getMonth() === 7) {
-        dateColors.headerColor = "#b6d7a8";
-        dateColors.fontColor = "#000000";
-        dateColors.headerNextColor = "#0000ff";
-        dateColors.fontNextColor = "#ffffff";
-    }
-    else if(date.getMonth() === 8) {
-        dateColors.headerColor = "#0000ff";
-        dateColors.fontColor = "#ffffff";
-        dateColors.headerNextColor = "#f198b3";
-        dateColors.fontNextColor = "#000000";
-    }
-    else if(date.getMonth() === 9) {
-        dateColors.headerColor = "#f198b3";
-        dateColors.fontColor = "#000000";
-        dateColors.headerNextColor = "#ffff90";
-        dateColors.fontNextColor = "#000000";
-    }
-    else if(date.getMonth() === 10) {
-        dateColors.headerColor = "#ffff90";
-        dateColors.fontColor = "#000000";
-        dateColors.headerNextColor = "#23395d";
-        dateColors.fontNextColor = "#ffffff";
-    }
-    else if(date.getMonth() === 11) {
-        dateColors.headerColor = "#23395d";
-        dateColors.fontColor = "#ffffff";
-        dateColors.headerNextColor = "#ba2323";
-        dateColors.fontNextColor = "#000000";
+        dateColors.contentNextRgb = "rgb(235, 170, 61, 65%)";
     }
 
     return dateColors;
@@ -241,15 +192,27 @@ function moduleInfo(button_id) {
     let button_info_id = button_id + "-info";
 
     if($(button_info_id).css("display") === "none") {
-        $(button_id).css("border-radius", "8px 8px 0 0")
-        $(button_id).css("margin-bottom", "0")
-        $(button_id).css("background", "rgba(109, 152, 171, 45%)")
+        $(button_id).css("border-radius", "8px 8px 0 0");
+        $(button_id).css("margin-bottom", "0");
+        $(button_id).css("background-color",
+            $(button_id).parent().parent().parent().css("background-color"));
         $(button_info_id).show();
     }
     else {
-        $(button_id).css("border-radius", "8px")
-        $(button_id).css("margin-bottom", "5px")
-        $(button_id).css("background", "#E9EDF0")
+        let background_color = $(button_id).css("background-color").toString().substring(0,
+            ($(button_id).css("background-color").toString().length - 1));
+
+        if(background_color.indexOf("235") > -1) {
+            background_color = background_color + ", 65%)";
+        }
+        else {
+            background_color = background_color + ", 60%)";
+        }
+
+        $(button_id).css("border-radius", "8px");
+        $(button_id).css("margin-bottom", "5px");
+        $(button_id).css("background-color", background_color);
+
         $(button_info_id).hide();
     }
 }
