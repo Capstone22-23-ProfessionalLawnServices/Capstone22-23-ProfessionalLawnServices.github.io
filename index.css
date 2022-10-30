@@ -126,23 +126,16 @@ h1 {
 }
 
 #sign-in-button {
-    color: white;
-    border-radius: 20px;
-    height: 35px;
+    background-color: #3394B7;
     width: 75%;
-    font-size: 25px;
-    text-align: center;
-    background-color: #6D98AB;
-    border-color: black;
-    border-width: 2px;
-    padding-bottom: 35px;
+    height: 35px;
     padding-top: 0px;
+    font-size: 20px;
 }
 
 #sign-in-button:hover {
-    background: rgba(109, 152, 171, 80%);
+    opacity: 80%;
 }
-
 
 #footer-text {
     font-size: 16px;

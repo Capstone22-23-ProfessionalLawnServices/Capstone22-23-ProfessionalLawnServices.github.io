@@ -36,13 +36,13 @@ function setDates() {
             $(day_id).css("background-color", dateColors.headerColor);
             $(day_id).css("color", dateColors.fontColor);
             $(day_id).parent().parent().css("background-color", dateColors.headerColor);
-            $(day_id_content).children().css("background-color", dateColors.contentRgb);
+            $(day_id_content).children().css("background-color", dateColors.contentColor);
         }
         else {
             $(day_id).css("background-color", dateColors.headerNextColor);
             $(day_id).css("color", dateColors.fontNextColor);
             $(day_id).parent().parent().css("background-color", dateColors.headerNextColor);
-            $(day_id_content).children().css("background-color", dateColors.contentNextRgb);
+            $(day_id_content).children().css("background-color", dateColors.contentNextColor);
         }
 
         date.setDate(date.getDate() + 1);
@@ -54,27 +54,27 @@ function getDateColors(date) {
     let dateColors = {
         headerColor: "",
         headerNextColor: "",
-        contentRgb: "",
+        contentColor: "",
         fontColor: "",
         fontNextColor: "",
-        contentNextRgb: ""
+        contentNextColor: ""
     };
 
     if((date.getMonth() % 2) === 0) {
-        dateColors.headerColor = "rgb(235, 170, 61)";
+        dateColors.headerColor = "#EBAA3D";
         dateColors.fontColor = "#000000";
-        dateColors.contentRgb = "rgb(235, 170, 61, 65%)";
-        dateColors.headerNextColor = "rgb(109, 152, 171)";
+        dateColors.contentColor = "#FFE5B8";
+        dateColors.headerNextColor = "#2A9793";
         dateColors.fontNextColor = "#000000";
-        dateColors.contentNextRgb = "rgb(109, 152, 171, 60%)";
+        dateColors.contentNextColor = "#B1E1DF";
     }
     else if((date.getMonth() % 2) === 1) {
-        dateColors.headerColor = "rgb(109, 152, 171)";
+        dateColors.headerColor = "#2A9793";
         dateColors.fontColor = "#000000";
-        dateColors.contentRgb = "rgb(109, 152, 171, 60%)";
-        dateColors.headerNextColor = "rgb(235, 170, 61)";
+        dateColors.contentColor = "#B1E1DF";
+        dateColors.headerNextColor = "#EBAA3D";
         dateColors.fontNextColor = "#000000";
-        dateColors.contentNextRgb = "rgb(235, 170, 61, 65%)";
+        dateColors.contentNextColor = "#FFE5B8";
     }
 
     return dateColors;
@@ -190,29 +190,37 @@ function moduleInfo(button_id) {
 
     button_id = "#" + button_id;
     let button_info_id = button_id + "-info";
+    let set_color = $(button_id).parent().parent().parent().css("background-color");
+
 
     if($(button_info_id).css("display") === "none") {
         $(button_id).css("border-radius", "8px 8px 0 0");
         $(button_id).css("margin-bottom", "0");
-        $(button_id).css("background-color",
-            $(button_id).parent().parent().parent().css("background-color"));
+
+        if (set_color === "rgb(42, 151, 147)") {
+            $(button_id).css("background-color", "#72C5C2");
+        }
+        else {
+            $(button_id).css("background-color", "#FAD28D");
+        }
+
         $(button_info_id).show();
     }
     else {
-        let background_color = $(button_id).css("background-color").toString().substring(0,
-            ($(button_id).css("background-color").toString().length - 1));
+        let background_color = $(button_id).css("background-color");
 
-        if(background_color.indexOf("235") > -1) {
-            background_color = background_color + ", 65%)";
+        let set_color = $(button_id).parent().parent().parent().css("background-color");
+
+        if(set_color === "rgb(42, 151, 147)") {
+            background_color = "rgb(177, 225, 223)";
         }
         else {
-            background_color = background_color + ", 60%)";
+            background_color = "#FFE5B8";
         }
 
         $(button_id).css("border-radius", "8px");
         $(button_id).css("margin-bottom", "5px");
         $(button_id).css("background-color", background_color);
-
         $(button_info_id).hide();
     }
 }

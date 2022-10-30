@@ -84,10 +84,6 @@ body {
     border: none;
 }
 
-.content-module:hover {
-    background: rgba(109, 152, 171, 45%);
-}
-
 .content-module:active {
     background: rgba(109, 152, 171, 45%);
     margin-bottom: 0;
@@ -124,6 +120,7 @@ body {
 
 .btn {
     margin: 2px;
+    background-color: #3394B7;
 }
 
 .nav-links li {
@@ -144,12 +141,6 @@ body {
 
 h2 {
     margin-top: 0;
-}
-
-#navbar-logo {
-    color: pink;
-    background-color: white;
-    border-radius: 10px;
 }
 
 #navbar-title {
