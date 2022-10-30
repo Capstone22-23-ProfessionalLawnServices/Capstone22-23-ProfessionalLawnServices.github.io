@@ -110,7 +110,7 @@ async function setWeather() {
             return json;
         })
 
-    $(day_id + "0").html(Math.round(Number(responseJsonWeather.main.temp_max)) + "|" +
+    $(day_id + "0").html("Weather: " + Math.round(Number(responseJsonWeather.main.temp_max)) + "|" +
         Math.round(Number(responseJsonWeather.main.temp_min)));
     let weather_info_html = "              <ul>\n" +
         "                <li><span>Humidity: " + responseJsonWeather.main.humidity + "</span></li>\n" +
@@ -152,17 +152,14 @@ async function setWeather() {
             day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + weekday;
 
             if(new Date().getDate() === intervalDate){
-                $(day_id).html(timeInterval.main.temp_max + "|" + timeInterval.main.temp_min);
+                $(day_id).html("Weather: " + timeInterval.main.temp_max + "|" + timeInterval.main.temp_min);
             }
             else if(tempMax === tempMin) {
                 $(day_id).html(timeInterval.main.temp);
             }
             else {
-                $(day_id).html(Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
+                $(day_id).html("Weather: " + Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
             }
-
-            console.log(timeInterval.main.humidity);
-            console.log(timeInterval.weather[0].description);
 
             weather_info_html = "              <ul>\n" +
                 "                <li><span>Humidity: " + tempHumidity + "</span></li>\n" +
@@ -191,7 +188,7 @@ async function setWeather() {
     }
 
     day_id = day_id.substring(0, day_id.lastIndexOf("-") + 1) + 5;
-    $(day_id).html(Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
+    $(day_id).html("Weather: " + Math.round(Number(tempMax)) + "|" + Math.round(Number(tempMin)));
 
     weather_info_html = "              <ul>\n" +
         "                <li><span>Humidity: " + tempHumidity + "</span></li>\n" +
