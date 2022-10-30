@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="home.css">
   <script src="home.js"></script>
 </head>
-<body onload="timeClock(); setDates(); setWeather()">
+<body onload="timeClock(); setDates();">
 <div class="overlay">
 
   <header class="navbar">
@@ -58,6 +58,10 @@
           <div id="day-0-content" class="date-content">
             <button id="weather-module-day-0" class="content-module" onclick="moduleInfo(this.id)">Weather 0</button>
             <div id="weather-module-day-0-info" class="module-info">
+              <ul>
+                <li><span>Humidity: </span></li>
+                <li><span>Description: </span></li>
+              </ul>
             </div>
             <!-- Tom is a hardcoded example -->
             <button class="content-module">Tom</button>
