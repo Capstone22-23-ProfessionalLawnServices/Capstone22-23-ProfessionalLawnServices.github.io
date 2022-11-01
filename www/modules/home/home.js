@@ -199,9 +199,9 @@ async function setWeather() {
 
 }
 
-function moduleInfo(button_id) {
+function moduleInfo(e) {
 
-    button_id = "#" + button_id;
+    let button_id = "#" + e.target.id;
     let button_info_id = button_id + "-info";
     let set_color = $(button_id).parent().parent().parent().css("background-color");
 
@@ -235,6 +235,33 @@ function moduleInfo(button_id) {
         $(button_id).css("margin-bottom", "5px");
         $(button_id).css("background-color", background_color);
         $(button_info_id).hide();
+    }
+}
+
+function drag(e) {
+    e.dataTransfer.setData("text", e.target.id);
+}
+
+function allowDrop(e) {
+    e.preventDefault();
+}
+
+function drop(e) {
+    e.preventDefault();
+    let data = e.dataTransfer.getData("text");
+    let target = e.target;
+    let targetId = "#" + target.id;
+
+    try {
+        if (!($(targetId).attr("class").split(/\s+/).includes("date-content"))) {
+            target = $(targetId).parent()[0];
+            target.appendChild(document.getElementById(data));
+        } else {
+            target.appendChild(document.getElementById(data));
+        }
+    }
+    catch (Exception) {
+
     }
 }
 
