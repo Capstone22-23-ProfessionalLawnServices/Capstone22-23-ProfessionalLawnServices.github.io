@@ -84,13 +84,6 @@ body {
     border: none;
 }
 
-.content-module:active {
-    background: rgba(109, 152, 171, 45%);
-    margin-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
 .inner-clock {
     background-color: white;
     height: 70%;
