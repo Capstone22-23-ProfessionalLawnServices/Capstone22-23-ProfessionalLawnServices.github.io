@@ -163,6 +163,14 @@ h2 {
     text-decoration: none;
 }
 
+#missed-content {
+    margin: 8px 8px 8px 8px;
+    height: 180px;
+    padding-top: 5px;
+    overflow-y: auto;
+}
+
+
 #add-schedule-date {
     margin-top: 25px;
 }

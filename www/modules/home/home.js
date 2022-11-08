@@ -225,7 +225,7 @@ function moduleInfo(e) {
         let set_color = $(button_id).parent().parent().parent().css("background-color");
 
         if(set_color === "rgb(42, 151, 147)") {
-            background_color = "rgb(177, 225, 223)";
+            background_color = "#72C5C2";
         }
         else {
             background_color = "#FFE5B8";
@@ -259,6 +259,21 @@ function drop(e) {
         } else {
             target.appendChild(document.getElementById(data));
         }
+
+        if($("#" + target.id).parent().parent().css("background-color") === "rgb(235, 170, 61)") {
+            $("#" + document.getElementById(data).id).css("background-color",
+                "#FFE5B8");
+        }
+        else if($("#" + target.id).parent().parent().css("background-color") === "rgb(42, 151, 147)") {
+            $("#" + document.getElementById(data).id).css("background-color",
+                "#72C5C2");
+        }
+        else {
+            $("#" + document.getElementById(data).id).css("background-color",
+        "#6D98AB");
+        }
+
+        console.log($(targetId).parent().parent().css("background-color"));
     }
     catch (Exception) {
 
