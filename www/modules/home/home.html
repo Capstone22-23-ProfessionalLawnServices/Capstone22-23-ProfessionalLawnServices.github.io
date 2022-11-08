@@ -32,7 +32,7 @@
 
     <div class="row center-block">
 
-      <div class="column col-lg-3 text-center">
+      <div class="column col-md-3 text-center">
         <div class="inner-clock">
           <div class="primary-column-header">Clock</div>
           <time id="clock-numbers"> Time</time>
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div id="current-day-column" class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-0" class="date-header"> Date 0 </div>
           <div id="day-0-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -69,7 +69,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-1" class="date-header"> Date 1 </div>
           <div id="day-1-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-2" class="date-header"> Date 2 </div>
           <div id="day-2-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -99,7 +99,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-3" class="date-header"> Date 3 </div>
           <div id="day-3-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -118,11 +118,18 @@
 
     <div class="row center-block">
 
-      <div class="column col-lg-3 text-center">
-        col
+      <div class="column col-md-3 text-center">
+        <div class="inner-add">
+          <div id="add-header" class="primary-column-header">Quick Add</div>
+          <input type="text" class="inner-add-elements" placeholder="Search Contacts">
+          <div class="clear inner-add-elements"></div>
+          <input type="date" id="add-schedule-date">
+          <span class="inline-space-10"></span>
+          <button  class="btn btn-primary inner-add-elements" onclick="" type="submit">Schedule</button>
+        </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-4" class="date-header"> Date 4 </div>
           <div id="day-4-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -137,7 +144,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-5" class="date-header"> Date 5 </div>
           <div id="day-5-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -152,7 +159,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-6" class="date-header"> Date 6 </div>
           <div id="day-6-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -161,7 +168,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-7" class="date-header"> Date 7 </div>
           <div id="day-7-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -174,11 +181,14 @@
 
     <div class="row center-block">
 
-      <div class="column col-lg-3 text-center">
-        col
-      </div>
+      <div class="column col-md-3 text-center">
+        <div class="inner-add">
+          <div id="missed-header" class="primary-column-header">Missed Appointments</div>
 
-      <div class="column col-lg-2 text-center">
+        </div>
+        </div>
+
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-8" class="date-header"> Date 8 </div>
           <div id="day-8-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -187,7 +197,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-9" class="date-header"> Date 9 </div>
           <div id="day-9-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -196,7 +206,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-10" class="date-header"> Date 10 </div>
           <div id="day-10-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -205,7 +215,7 @@
         </div>
       </div>
 
-      <div class="column col-lg-2 text-center">
+      <div class="column col-md-2 text-center">
         <div class="inner-date-column">
           <div id="day-11" class="date-header"> Date 11 </div>
           <div id="day-11-content" class="date-content" ondragover="allowDrop(event)" ondrop="drop(event)">

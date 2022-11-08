@@ -33,12 +33,20 @@ body {
     justify-content: space-between;
     align-items: center;
     display: flex;
+    border-radius: 0;
 }
 
 .main-container {
     margin-top: 60px;
     padding-top: 50px;
     padding-bottom: 10px;
+}
+
+.clear{
+    clear: both;
+    display: block;
+    content: "";
+    width: 100%;
 }
 
 .primary-column-header {
@@ -89,6 +97,15 @@ body {
     height: 70%;
 }
 
+.inner-add {
+    background-color: white;
+    height: 100%;
+}
+
+.inner-add-elements {
+    margin: 5px 5px 5px 5px;
+}
+
 .inner-clock-client {
     padding-top: 15px;
 }
@@ -128,6 +145,10 @@ body {
     padding-left: 20px;
 }
 
+.inline-space-10 {
+    margin: 0 5px 0 5px;
+}
+
 #navbar-title:hover, .nav-links li a:hover {
     opacity: 50%;
 }
@@ -140,6 +161,14 @@ h2 {
     font-size: 25px;
     color: white;
     text-decoration: none;
+}
+
+#add-schedule-date {
+    margin-top: 25px;
+}
+
+#add-header {
+    margin: 0 0 50px 0;
 }
 
 #navbar-collapse {
@@ -169,10 +198,26 @@ h2 {
     display: none;
 }
 
-@media screen and (max-width: 850px) {
+@media (max-width: 1199px){
 
-    .col-lg-2 {
+    .container {
+        width: 990px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    .container {
+        width: auto;
+    }
+
+    .col-md-2 {
         display: none;
+    }
+
+    #current-day-column {
+        display: flex;
     }
 
 }
