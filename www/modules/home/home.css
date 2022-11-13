@@ -220,6 +220,10 @@ h2 {
         width: 990px;
     }
 
+    #missed-header {
+        font-size: 24px;
+    }
+
 }
 
 @media (max-width: 991px) {
@@ -250,6 +254,10 @@ h2 {
 
     #navbar-title {
         font-size: 22px;
+    }
+
+    #navbar-dropdown {
+        display: inline;
     }
 
 }
