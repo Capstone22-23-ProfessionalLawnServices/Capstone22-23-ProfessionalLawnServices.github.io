@@ -26,6 +26,17 @@
         <li><a href="#">Statistics</a></li>
       </ul>
     </nav>
+    <div id="navbar-dropdown">
+      <button id="nav-links-dropdown-button">
+        <img src="../../../images/caret-down-square.svg" height="25" width="25">
+      </button>
+      <div id="nav-links-dropdown">
+        <a href="#">Home</a>
+        <a href="#">Contacts</a>
+        <a href="#">Account</a>
+        <a href="#">Statistics</a>
+      </div>
+    </div>
   </header>
 
   <div class="container main-container center-block">
@@ -64,7 +75,11 @@
               </ul>
             </div>
             <!-- Tom is a hardcoded example -->
-            <button id="861561-11" class="content-module" draggable="true" ondragstart="drag(event)">Tom</button>
+              <button id="861561-11" class="content-module" draggable="true" ondragstart="drag(event)">
+                <div>
+                  <span>Tom</span>
+                </div>
+              </button>
           </div>
         </div>
       </div>
@@ -124,7 +139,7 @@
           <input type="text" class="inner-add-elements" placeholder="Search Contacts">
           <div class="clear inner-add-elements"></div>
           <input type="date" id="add-schedule-date">
-          <span class="inline-space-10"></span>
+          <div class="clear inner-add-elements"></div>
           <button  class="btn btn-primary inner-add-elements" onclick="" type="submit">Schedule</button>
         </div>
       </div>
@@ -185,7 +200,11 @@
         <div class="inner-add">
           <div id="missed-header" class="primary-column-header">Missed Appointments</div>
           <div id="missed-content">
-            <button id="86151-11" class="content-module" draggable="true" ondragstart="drag(event)">Tom</button>
+            <button id="86151-11" class="content-module" draggable="true" ondragstart="drag(event)">
+              <div>
+                <span>Tom</span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
