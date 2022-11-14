@@ -149,7 +149,7 @@ body {
     margin: 0 5px 0 5px;
 }
 
-#navbar-title:hover, .nav-links li a:hover {
+#navbar-title:hover, .nav-links li a:hover, #navbar-dropdown-content a:hover {
     opacity: 50%;
 }
 
