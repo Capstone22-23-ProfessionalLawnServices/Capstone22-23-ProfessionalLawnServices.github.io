@@ -311,7 +311,4 @@ function navbarDropdown(e) {
         $(button_id).prop("src", "../../../images/caret-right-square.svg")
         $(dropdown_display_id).css("display", "none")
     }
-
-
-
 }
