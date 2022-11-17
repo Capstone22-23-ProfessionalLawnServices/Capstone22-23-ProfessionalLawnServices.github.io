@@ -1,0 +1,13 @@
+.row {
+    background-color: white;
+}
+
+#contacts-table {
+    margin-left: auto;
+    margin-right: auto;
+    outline: black 8px;
+}
+
+.thead {
+    background-color: rgb(235, 170, 61);
+}
