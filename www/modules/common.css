@@ -65,6 +65,11 @@ body {
     margin: 0 5px 0 5px;
 }
 
+.btn {
+    margin: 2px;
+    background-color: #3394B7;
+}
+
 #navbar-title:hover, .nav-links li a:hover, #navbar-dropdown-content a:hover {
     opacity: 50%;
 }

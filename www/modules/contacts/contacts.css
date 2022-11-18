@@ -2,12 +2,16 @@
     background-color: white;
 }
 
+.thead {
+    background-color: rgb(235, 170, 61);
+}
+
 #contacts-table {
     margin-left: auto;
     margin-right: auto;
     outline: black 8px;
 }
 
-.thead {
-    background-color: rgb(235, 170, 61);
+#add-person-button {
+    margin: 15px 0 0 0;
 }
