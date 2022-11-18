@@ -70,6 +70,10 @@ body {
     background-color: #3394B7;
 }
 
+.table {
+    margin-bottom: 10px;
+}
+
 #navbar-title:hover, .nav-links li a:hover, #navbar-dropdown-content a:hover {
     opacity: 50%;
 }
