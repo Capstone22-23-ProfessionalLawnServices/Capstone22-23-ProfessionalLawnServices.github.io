@@ -74,6 +74,38 @@ body {
     margin-bottom: 10px;
 }
 
+
+.thead {
+    background-color: rgb(235, 170, 61);
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #FFE5B8;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover {
+    transition-duration: 0s;
+}
+
+#row1 {
+    border-radius: 10px 10px 0 0;
+}
+
+#row3 {
+    border-radius: 0 0 10px 10px;
+    height: 30px;
+}
+
+#next-page {
+    border: none;
+    background-color: white;
+}
+
+#prev-page {
+    border: none;
+    background-color: white;
+}
+
 #navbar-title:hover, .nav-links li a:hover, #navbar-dropdown-content a:hover {
     opacity: 50%;
 }
