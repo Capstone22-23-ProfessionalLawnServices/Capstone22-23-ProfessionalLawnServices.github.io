@@ -59,30 +59,38 @@
         </button>
       </div>
 
-      <div class="column col-md-5 text-center" style="margin-top: 15px">
-        <select id="job-type-filter">
-          <!-- Tom is a hardcoded example -->
-          <option value="Null">Job Type</option>
-        </select>
-        
-        <div class="date-range-container">
+      <div id="stacking-column" class="column col-md-5 text-center" style="margin-top: 15px">
+
+        <div class="center-stacking-column"></div>
+
+        <div id="job-filter-container" class="column-containers">
+          <select id="job-type-filter">
+            <option value="Null">Job Type</option>
+          </select>
+        </div>
+
+        <div id="date-filter-container" class="column-containers">
+          <input type="date" id="after-date-filter">
+          <div class="clear"></div>
           <input type="date" id="before-date-filter">
         </div>
 
-        <div class="date-range-container">
-          <input type="date" id="after-date-filter">
+        <div id="filter-button-container" class="column-containers">
+          <button id="filter-button" class="btn btn-primary">
+            <span id="filter-button-text"> Filter </span>
+            <img src="../../../images/filter.svg" height="20" width="20">
+          </button>
         </div>
 
-        <button id="search-contact-button" class="btn btn-primary">
-          <span id="search-contact-button-text"> Filter </span>
-          <img src="../../../images/filter.svg" height="20" width="20">
-        </button>
+        <div class="center-stacking-column"></div>
+
       </div>
+
 
       <div class="column col-md-1 text-center" style="margin-top: 15px">
         <a href="add-appointment.html">
-          <button id="add-contact-button" class="btn btn-primary">
-            <span id="add-contact-button-text"> Add </span>
+          <button id="add-appointment-button" class="btn btn-primary">
+            <span id="add-appointment-button-text"> Add </span>
             <img src="../../../images/calendar-plus.svg" style="margin-left: 3px">
           </button>
         </a>
