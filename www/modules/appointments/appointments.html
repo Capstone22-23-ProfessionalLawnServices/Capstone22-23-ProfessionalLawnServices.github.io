@@ -47,33 +47,43 @@
 
     <div id="row1" class="row center-block">
 
-      <div class="column col-sm-3 text-center">
+      <div class="column col-md-3 text-center">
         <h1>Appointments</h1>
       </div>
 
-      <div class="column col-sm-3 text-center" style="margin-top: 15px">
+      <div class="column col-md-3 text-center" style="margin-top: 15px">
         <input type="text" class="inner-add-elements" placeholder="Search Appointments">
         <button id="search-appointment-button" class="btn btn-primary">
-          Search <img src="../../../images/search.svg" height="20" width="20">
+          <span id="search-appointment-button-text"> Search </span>
+          <img src="../../../images/search.svg" height="20" width="20">
         </button>
       </div>
 
-      <div class="column col-sm-5 text-center" style="margin-top: 15px">
+      <div class="column col-md-5 text-center" style="margin-top: 15px">
         <select id="job-type-filter">
           <!-- Tom is a hardcoded example -->
           <option value="Null">Job Type</option>
         </select>
-        <input type="date" id="before-date-filter">
-        <input type="date" id="after-date-filter">
+        
+        <div class="date-range-container">
+          <input type="date" id="before-date-filter">
+        </div>
+
+        <div class="date-range-container">
+          <input type="date" id="after-date-filter">
+        </div>
+
         <button id="search-contact-button" class="btn btn-primary">
-          Filter <img src="../../../images/filter.svg" height="20" width="20">
+          <span id="search-contact-button-text"> Filter </span>
+          <img src="../../../images/filter.svg" height="20" width="20">
         </button>
       </div>
 
-      <div class="column col-sm-1 text-center" style="margin-top: 15px">
+      <div class="column col-md-1 text-center" style="margin-top: 15px">
         <a href="add-appointment.html">
           <button id="add-contact-button" class="btn btn-primary">
-            Add <img src="../../../images/calendar-plus.svg" style="margin-left: 3px">
+            <span id="add-contact-button-text"> Add </span>
+            <img src="../../../images/calendar-plus.svg" style="margin-left: 3px">
           </button>
         </a>
       </div>

@@ -2,6 +2,38 @@
     background-color: white;
 }
 
+.column {
+    display: flow;
+}
+
 #row1 .column{
     padding: 0;
+}
+
+.date-range-container {
+    display: inline;
+}
+
+@media (max-width: 1200px) {
+
+    #search-contact-button-text {
+        display: none;
+    }
+
+    #add-contact-button-text {
+        display: none;
+    }
+
+    #search-appointment-button-text{
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .date-range-container {
+        display: block;
+        margin: 2px 0 0 0;
+    }
+
 }
